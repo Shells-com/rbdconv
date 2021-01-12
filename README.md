@@ -21,3 +21,14 @@ issue.
 Non-linux OSes can also be converted this way, and do not need to be exactly
 8GB, however if the image is too large it may not be possible to be used with
 plans not offering at least an equal amount of space.
+
+## Usage
+
+Shells™ typically requires images to use rbd+xz format.
+
+	php raw-to-rbd.php diskimage.raw | xz -z -9 -T 16 -v >diskimage.shells
+
+You can check the sha256 sum and compare with the value shown on shells after upload:
+
+	sha256sum -b diskimage.shells
+
