@@ -22,7 +22,22 @@ Non-linux OSes can also be converted this way, and do not need to be exactly
 8GB, however if the image is too large it may not be possible to be used with
 plans not offering at least an equal amount of space.
 
-## Usage
+## Usage (go version)
+
+First, you need to install rbdconv:
+
+    go install github.com/Shells-Com/rbdconv/cli/rbdconv@latest
+
+You can then use the following command to convert a raw file to rbd format. rbdconv will handle both
+conversion and compression.
+
+    rbdconv -in diskimage.raw -out diskimage.shells
+
+You can check the sha256 sum and compare with the value shown on shells after upload:
+
+    sha256sum -b diskimage.shells
+
+## Usage (PHP version)
 
 Shells™ typically requires images to use rbd+xz format.
 
