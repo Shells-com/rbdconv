@@ -23,11 +23,14 @@ func main() {
 		fmt.Fprintf(os.Stderr, "failed to open %s for reading: %s", *inFlag, err)
 		os.Exit(1)
 	}
+	defer in.Close()
+
 	out, err := os.Create(*outFlag)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to open %s for writing: %s", *outFlag, err)
 		os.Exit(1)
 	}
+	defer out.Close()
 
 	err = rbdconv.RawToRbd(out, in)
 	if err != nil {
