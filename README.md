@@ -26,7 +26,7 @@ plans not offering at least an equal amount of space.
 
 First, you need to install rbdconv:
 
-    go install github.com/Shells-Com/rbdconv/cli/rbdconv@latest
+    go install github.com/Shells-com/rbdconv/cli/rbdconv@latest
 
 You can then use the following command to convert a raw file to rbd format. rbdconv will handle both
 conversion and compression.
